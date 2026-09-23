@@ -1,5 +1,7 @@
 #pragma once
 
+namespace BesselLowpassFilter {
+
 /**
  *  *_cont variables for calculations of the filter's coefficients
     these variables are connected with analog lowpass Bessel filter with cutoff frequency 1 rad/s
@@ -27,3 +29,5 @@ class BesselFilterLP5Order {
         float a[6], b[6]; // filter coefficients
         float y_prev[5], x_prev[5]; // arrays for keeping previous x (input) and y (output) values
 };
+
+} /* namespace BesselLowpass */
