@@ -41,6 +41,10 @@ concept float_or_double = std::same_as<F, float> || std::same_as<F, double>;
 template<vals_to_filter T, float_or_double F>
 class BesselFilterLP5Order {
 public:
+  T operator()(T new_val) {
+    return step(new_val);
+  }
+
   /**
    * @brief Used to filtrate for one step in accordance to sample frequency
    * @param new_val new filter input value
