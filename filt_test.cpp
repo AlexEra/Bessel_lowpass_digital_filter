@@ -38,7 +38,7 @@ int main() {
     }
   }
 
-  bes.set_cutoff_and_sample_frequencies(1000.0, 100.0);
+  bes.set_cutoff_and_sample_frequencies(1000.0, 250.0);
 
   // open file to save filtered data
   std::ofstream file("data.txt", std::ofstream::binary);
@@ -47,7 +47,7 @@ int main() {
 
   /* filtering */
   for (auto i{0}; i < data.size(); i++) {
-    bes.step(data[i]);
+    f_data[i] = bes.step(data[i]);
     // save data to file
     file << i << '\t' << data[i] << '\t' << f_data[i] << "\r\n";
   }
